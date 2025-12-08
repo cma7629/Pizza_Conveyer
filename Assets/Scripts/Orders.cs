@@ -3,16 +3,18 @@ using UnityEngine;
 
 public enum ToppingType
 {
-    Pepperoni,
-    Beef,
-    Bacon,
-    Anchovie,
+    Sauce,
+    Cheese,
     Mushroom,
+    Pepper_Green,
+    Anchovy,
+    Bacon,
+    Beef,
     Onion,
-    Pepper,
-    Pineapple,
-    OliveBlack,
-    OliveGreen
+    Olive_Green,
+    Olive_Black,
+    Pepperoni,
+    Pineapple
 }
 
 public class Order

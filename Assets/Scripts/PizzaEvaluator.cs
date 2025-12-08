@@ -6,9 +6,6 @@ public class PizzaEvaluator : MonoBehaviour
     {
         int score = 0;
 
-        // Sauce & cheese always required
-        if (pizza.hasSauce) score += 20;
-        if (pizza.hasCheese) score += 20;
 
         foreach (var topping in order.requiredToppings)
         {
