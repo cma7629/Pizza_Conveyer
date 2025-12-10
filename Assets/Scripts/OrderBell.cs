@@ -13,6 +13,7 @@ public class OrderBell : MonoBehaviour
         if (canPress)
         {
             GenerateOrder();
+            //start pizza animation
         }
     }
 

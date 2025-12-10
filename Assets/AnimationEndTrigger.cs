@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class AnimationEndTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void OnAnimationEnd (Order order, PizzaBuild pizza){
+        //Cross reference order and pizza
+        foreach (var topping in pizza.appliedToppings) //for each topping on pizza
+        {
+            if (order.requiredToppings.Contains(topping)) 
+            {
+                //pass
+            }
+            else {
+                //fail
+            }
+            
+        }
+        foreach (var topping in order.requiredToppings) //second pass to cross reference
+        {
+            if (pizza.appliedToppings.Contains(topping))
+            {
+                //pass
+            }
+            else
+            {
+                //fail
+            }
+        }
+        //pizza.RemoveAll(pizza); //remove all toppings
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
+
+

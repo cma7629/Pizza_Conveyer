@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,16 @@ public class PizzaBuild : MonoBehaviour
 
     public bool hasSauce = false;
     public bool hasCheese = false;
+    public bool hasPepperoni = false;
+    public bool hasAnchovy = false;
+    public bool hasBacon = false;
+    public bool hasBeef = false;
+    public bool hasOnion = false;
+    public bool hasOliveG = false;
+    public bool hasOliveB = false;
+    public bool hasMushroom = false;
+    public bool hasPepper = false;
+    public bool hasPineapple = false;
 
     public List<ToppingType> appliedToppings = new List<ToppingType>();
 
@@ -53,44 +64,114 @@ public class PizzaBuild : MonoBehaviour
                 break;
 
             case ToppingType.Mushroom:
-                mushroomLayer?.SetActive(true);
+                if (mushroomLayer != null)
+                {
+                    mushroomLayer.SetActive(true);
+                    hasMushroom = true;
+                }
                 break;
 
             case ToppingType.Pepper_Green:
-                pepperGreenLayer?.SetActive(true);
+                if (pepperGreenLayer != null)
+                {
+                    pepperGreenLayer.SetActive(true);
+                    hasPepper = true;
+                }
                 break;
 
             case ToppingType.Anchovy:
-                anchovyLayer?.SetActive(true);
+                if (anchovyLayer != null)
+                {
+                    anchovyLayer.SetActive(true);
+                    hasAnchovy = true;
+                }
                 break;
 
             case ToppingType.Bacon:
-                baconLayer?.SetActive(true);
+                if (baconLayer != null)
+                {
+                    baconLayer.SetActive(true);
+                    hasBacon = true;
+                }
                 break;
 
             case ToppingType.Beef:
-                beefLayer?.SetActive(true);
+                if (beefLayer != null)
+                {
+                    beefLayer.SetActive(true);
+                    hasBeef = true;
+                }
                 break;
 
             case ToppingType.Onion:
-                onionLayer?.SetActive(true);
+                if (onionLayer != null)
+                {
+                    onionLayer.SetActive(true);
+                    hasOnion = true;
+                }
                 break;
 
             case ToppingType.Olive_Green:
-                oliveGreenLayer?.SetActive(true);
+                if (oliveGreenLayer != null)
+                {
+                    oliveGreenLayer.SetActive(true);
+                    hasOliveG = true;
+                }
                 break;
 
             case ToppingType.Olive_Black:
-                oliveBlackLayer?.SetActive(true);
+                if (oliveBlackLayer != null)
+                {
+                    oliveBlackLayer.SetActive(true);
+                    hasOliveB = true;
+                }
                 break;
 
             case ToppingType.Pepperoni:
-                pepperoniLayer?.SetActive(true);
+                if (pepperoniLayer != null)
+                {
+                    pepperoniLayer.SetActive(true);
+                    hasPepperoni = true;
+                }
                 break;
 
             case ToppingType.Pineapple:
-                pineappleLayer?.SetActive(true);
+                if (pineappleLayer != null)
+                {
+                    pineappleLayer.SetActive(true);
+                    hasPineapple = true;
+                }
                 break;
         }
+        
+    }/*
+    public void RemoveAll(PizzaBuild pizza)
+    {
+        pizza.hasSauce = false;
+        pizza.hasCheese = false;
+        pizza.hasPepperoni = false;
+        pizza.hasAnchovy = false;
+        pizza.hasBacon = false;
+        pizza.hasBeef = false;
+        pizza.hasOnion = false;
+        pizza.hasOliveG = false;
+        pizza.hasOliveB = false;
+        pizza.hasMushroom = false;
+        pizza.hasPepper = false;
+        pizza.hasPineapple = false;
+
+        sauceLayer.SetActive(false);
+        cheeseLayer.SetActive(false);
+        mushroomLayer.SetActive(false);
+        pepperGreenLayer.SetActive(false);
+        anchovyLayer.SetActive(false);
+        baconLayer.SetActive(false);
+        beefLayer.SetActive(false);
+        onionLayer.SetActive(false);
+        oliveGreenLayer.SetActive(false);
+        oliveBlackLayer.SetActive(false);
+        pepperoniLayer.SetActive(false);
+        pineappleLayer.SetActive(false);
     }
+    */
 }

@@ -5562,6 +5562,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3811f8831dd9c3b489be797b81343256, type: 3}
       insertIndex: -1
       addedObject: {fileID: 948454557}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3811f8831dd9c3b489be797b81343256, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 948454559}
   m_SourcePrefab: {fileID: 100100000, guid: 3811f8831dd9c3b489be797b81343256, type: 3}
 --- !u!1 &632912516
 GameObject:
@@ -8304,6 +8307,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderGenerator: {fileID: 814894198}
   slipManager: {fileID: 839431315}
+--- !u!95 &948454559
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948454556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0814fb178a2e66b4d89a4cfeb95f72b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &976021310
 GameObject:
   m_ObjectHideFlags: 0
@@ -9754,7 +9778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1224907533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15116,7 +15140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743686461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2f57bdcd5e68ee44a6457860cd320e7, type: 3}
   m_Name: 
@@ -15147,6 +15171,16 @@ MonoBehaviour:
   pineappleLayer: {fileID: 1342774771}
   hasSauce: 0
   hasCheese: 0
+  hasPepperoni: 0
+  hasAnchovy: 0
+  hasBacon: 0
+  hasBeef: 0
+  hasOnion: 0
+  hasOliveG: 0
+  hasOliveB: 0
+  hasMushroom: 0
+  hasPepper: 0
+  hasPineapple: 0
   appliedToppings: 
 --- !u!1 &1756814462
 GameObject:
