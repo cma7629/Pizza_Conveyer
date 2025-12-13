@@ -3,30 +3,22 @@ using UnityEngine;
 public class OrderBell : MonoBehaviour
 {
     public OrderGenerator orderGenerator;
-    public OrderSlipManager slipManager;
+    public PizzaSpawner pizzaSpawner;
 
     private bool canPress = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        // You can change this to detect hand, controller, or specific object tag
-        if (canPress)
-        {
-            GenerateOrder();
-        }
-    }
+        if (!canPress) return;
 
-    private void GenerateOrder()
-    {
         canPress = false;
 
-        // Generate new order
+        // Generate order
         orderGenerator.GenerateNewOrder();
 
-        // Create slip with that order on it
-        slipManager.SpawnSlip(orderGenerator.currentOrder);
+        // Spawn pizza
+        pizzaSpawner.SpawnPizza();
 
-        // Cooldown
         Invoke(nameof(ResetPress), 1f);
     }
 

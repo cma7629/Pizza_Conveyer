@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 public class OrderGenerator : MonoBehaviour
 {
@@ -11,25 +12,29 @@ public class OrderGenerator : MonoBehaviour
     public void GenerateNewOrder()
     {
         currentOrder = new Order();
-
-        // Random name
         currentOrder.orderName = "Order #" + Random.Range(1000, 9999);
 
-        // Random number of toppings
-        int toppingCount = Random.Range(1, 5); // 1 to 4 toppings
+        int toppingCount = Random.Range(1, 5); // 1–4 toppings
 
-        // Get all possible topping types
-        var allToppings = System.Enum.GetValues(typeof(ToppingType)).Cast<ToppingType>().ToList();
+        // Get ALL toppings
+        List<ToppingType> allToppings =
+            System.Enum.GetValues(typeof(ToppingType))
+            .Cast<ToppingType>()
+            .ToList();
 
-        // Shuffle and pick the first N toppings
-        for (int i = 0; i < toppingCount; i++)
+        // 🚫 REMOVE base ingredients
+        allToppings.Remove(ToppingType.Sauce);
+        allToppings.Remove(ToppingType.Cheese);
+
+        // Pick random toppings
+        for (int i = 0; i < toppingCount && allToppings.Count > 0; i++)
         {
             int index = Random.Range(0, allToppings.Count);
             currentOrder.requiredToppings.Add(allToppings[index]);
-            allToppings.RemoveAt(index); // prevent duplicates
+            allToppings.RemoveAt(index);
         }
 
-        Debug.Log("Generated Random Order!");
+        Debug.Log("Generated Order (no sauce/cheese as toppings)");
 
         OrderGenerated?.Invoke(currentOrder);
     }

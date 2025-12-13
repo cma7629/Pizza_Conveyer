@@ -19,9 +19,21 @@ public class PizzaBuild : MonoBehaviour
     public GameObject pepperoniLayer;
     public GameObject pineappleLayer;
 
-    public bool hasSauce = false;
-    public bool hasCheese = false;
+    [Header("Ingredient State (for evaluation)")]
+    public bool hasSauce;
+    public bool hasCheese;
+    public bool hasPepperoni;
+    public bool hasAnchovy;
+    public bool hasMushroom;
+    public bool hasPepperGreen;
+    public bool hasOliveGreen;
+    public bool hasOliveBlack;
+    public bool hasBacon;
+    public bool hasBeef;
+    public bool hasOnion;
+    public bool hasPineapple;
 
+    // Optional: useful for debugging or generic loops
     public List<ToppingType> appliedToppings = new List<ToppingType>();
 
     public void ApplyTopping(ToppingType type)
@@ -32,64 +44,68 @@ public class PizzaBuild : MonoBehaviour
         EnableLayer(type);
     }
 
-    void EnableLayer(ToppingType type)
+    private void EnableLayer(ToppingType type)
     {
         switch (type)
         {
             case ToppingType.Sauce:
-                if (sauceLayer != null)
-                {
-                    sauceLayer.SetActive(true);
-                    hasSauce = true;
-                }
+                sauceLayer?.SetActive(true);
+                hasSauce = true;
                 break;
 
             case ToppingType.Cheese:
-                if (cheeseLayer != null)
-                {
-                    cheeseLayer.SetActive(true);
-                    hasCheese = true;
-                }
+                cheeseLayer?.SetActive(true);
+                hasCheese = true;
                 break;
 
             case ToppingType.Mushroom:
                 mushroomLayer?.SetActive(true);
+                hasMushroom = true;
                 break;
 
             case ToppingType.Pepper_Green:
                 pepperGreenLayer?.SetActive(true);
+                hasPepperGreen = true;
                 break;
 
             case ToppingType.Anchovy:
                 anchovyLayer?.SetActive(true);
+                hasAnchovy = true;
                 break;
 
             case ToppingType.Bacon:
                 baconLayer?.SetActive(true);
+                hasBacon = true;
                 break;
 
             case ToppingType.Beef:
                 beefLayer?.SetActive(true);
+                hasBeef = true;
                 break;
 
             case ToppingType.Onion:
                 onionLayer?.SetActive(true);
+                hasOnion = true;
                 break;
 
             case ToppingType.Olive_Green:
                 oliveGreenLayer?.SetActive(true);
+                hasOliveGreen = true;
                 break;
 
             case ToppingType.Olive_Black:
                 oliveBlackLayer?.SetActive(true);
+                hasOliveBlack = true;
                 break;
 
             case ToppingType.Pepperoni:
                 pepperoniLayer?.SetActive(true);
+                hasPepperoni = true;
                 break;
 
             case ToppingType.Pineapple:
                 pineappleLayer?.SetActive(true);
+                hasPineapple = true;
                 break;
         }
     }
